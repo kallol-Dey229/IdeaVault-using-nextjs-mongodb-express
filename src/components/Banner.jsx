@@ -49,7 +49,7 @@ const Banner = () => {
                 {banner.desc}
               </p>
 
-              <button className="bg-cyan-500 px-5 py-3 uppercase hover:cursor-pointer">
+              <button className="bg-cyan-600 px-5 py-3 uppercase hover:cursor-pointer box:hover:before box:hover:after box:hover box:before box:after box ">
                 Explore Now
               </button>
             </div>

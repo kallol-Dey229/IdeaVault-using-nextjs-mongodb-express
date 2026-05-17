@@ -4,16 +4,20 @@
 import { Avatar, Button } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 
 const Navbar = () => {
+
+    const [open, setOpen] = useState(false);
 
     return (
         <div className=' bg-slate-100 py-3'>
             <nav className='flex items-center justify-between max-w-7xl mx-auto'>
                 <div>
+                    <Link href={'/'}>
                     <Image className='rounded-md' src={'/assets/logo1.png'} alt='logo' width={100} height={100}></Image>
+                    </Link>
                 </div>
                 
                 <ul className='flex gap-6'>
@@ -50,6 +54,7 @@ const Navbar = () => {
                                 <Avatar.Image referrerPolicy='no-referrer' alt="John Doe" src=""/>
                                 <Avatar.Fallback></Avatar.Fallback>
                             </Avatar>
+                            
                         </li>
                         
                             <li>
