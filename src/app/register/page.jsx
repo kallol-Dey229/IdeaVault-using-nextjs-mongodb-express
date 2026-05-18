@@ -30,6 +30,13 @@ const RegisterPage = () => {
         }
     }
 
+
+    const handleGoogleSignIn = async () => {
+            const data = await authClient.signIn.social({
+                provider: "google",
+            });
+        };
+
     return (
         <div className="min-h-screen bg-cyan-50 flex items-center justify-center px-4">
 
@@ -208,13 +215,14 @@ const RegisterPage = () => {
                     <div>
 
                         <Button
+                            onClick={handleGoogleSignIn}
                             variant="outline"
                             className="w-full rounded-sm font-bold p-3 text-cyan-700"
                         >
 
                             <FcGoogle />
 
-                            Signin With Google
+                            Signup With Google
 
                         </Button>
 

@@ -12,20 +12,30 @@ const LoginPage = () => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const user = Object.fromEntries(formData.entries());
-       
+
 
         const { data, error } = await authClient.signIn.email({
-                    email: user.email,
-                    password: user.password
-                });
-        
-                if(data){
-                    redirect('/');
-                }
-                if(error){
-                    toast.error("Login failed: " + error.message);
-                }
+            email: user.email,
+            password: user.password
+        });
+
+        if (data) {
+            redirect('/');
+        }
+        if (error) {
+            toast.error("Login failed: " + error.message);
+        }
     }
+
+
+
+    const handleGoogleSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    };
+
+
     return (
         <div className="min-h-screen bg-cyan-50 flex items-center justify-center px-4">
 
@@ -161,7 +171,7 @@ const LoginPage = () => {
 
                     <div>
 
-                        <Button
+                        <Button onClick={handleGoogleSignIn}
                             variant="outline"
                             className="w-full rounded-sm font-bold p-3 text-cyan-700"
                         >

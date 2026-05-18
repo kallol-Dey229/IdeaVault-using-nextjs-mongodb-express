@@ -12,7 +12,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className=' bg-slate-100 py-3'>
+        <div className=' bg-slate-100 py-3 fixed w-full z-10 top-0 left-0 shadow-md'>
             <nav className='flex items-center justify-between max-w-7xl mx-auto'>
                 <div>
                     <Link href={'/'}>

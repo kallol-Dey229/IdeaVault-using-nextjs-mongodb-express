@@ -43,14 +43,14 @@
 }
 
 .box:hover:before {
-  border-color: cyan;
+  border-color: rgb(28, 107, 107);
   height: 100%;
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .3s;
 }
 
 .box:hover:after {
-  border-color:cyan;
+  border-color:rgb(87, 174, 174);
   height: 100%;
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .5s;
