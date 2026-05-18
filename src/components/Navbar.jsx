@@ -1,10 +1,10 @@
 'use client'
 
 
-import { Avatar, Button } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { RightNav } from './RightNav';
 
 
 const Navbar = () => {
@@ -39,30 +39,18 @@ const Navbar = () => {
 
                 </ul>
 
-
-
-
-                <ul className='flex gap-4 items-center'>
-                    <li>
-                        <Link href={'/profile'}>Profile</Link>
-                    </li>
-
-
-                    
-                        <li>
-                            <Avatar>
+              
+                        
+                            {/* <Avatar>
                                 <Avatar.Image referrerPolicy='no-referrer' alt="John Doe" src=""/>
                                 <Avatar.Fallback></Avatar.Fallback>
-                            </Avatar>
-                            
-                        </li>
-                        
-                            <li>
-                                <Link href={'/login'}>Login</Link>
-                            </li>
-                            
-                        
-                </ul>
+                            </Avatar> */}
+
+
+
+                <div>
+                    <RightNav />
+                </div>
             </nav>
         </div>
     );
