@@ -1,6 +1,7 @@
 import Image from "next/image";
-
+//
 const IdeaDetailsPage = async ({ params }) => {
+    
     const { id } = await params;
 
     const res = await fetch(`http://localhost:8000/idea/${id}`);
