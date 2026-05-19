@@ -1,8 +1,10 @@
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
+import { EditModal } from "./EditModal";
 
-const IdeaCard = ({ idea }) => {
+const MyIdeaCard = ({ idea }) => {
     const { _id, title, shortDescription, estimatedBudget, targetAudience, imageURL, category } = idea;
  
     return (
@@ -31,7 +33,8 @@ const IdeaCard = ({ idea }) => {
 
             <div className="p-4 space-y-4">
 
-                <div>
+                <div className="flex justify-between gap-2">
+                    <div>
                     <h2 className="line-clamp-1 text-lg font-bold text-slate-800">
                         {title}
                     </h2>
@@ -39,6 +42,9 @@ const IdeaCard = ({ idea }) => {
                     <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-500">
                         {shortDescription}
                     </p>
+                </div>
+
+                <EditModal idea={idea} />
                 </div>
 
                 <div className="rounded-2xl bg-cyan-50 p-3">
@@ -83,4 +89,4 @@ const IdeaCard = ({ idea }) => {
     );
 };
 
-export default IdeaCard;
+export default MyIdeaCard;

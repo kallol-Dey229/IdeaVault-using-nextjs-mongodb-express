@@ -26,7 +26,7 @@ const LoginPage = () => {
             toast.error("Login failed: " + error.message);
         }
     }
-
+ 
 
 
     const handleGoogleSignIn = async () => {

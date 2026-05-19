@@ -1,8 +1,8 @@
 'use client'
 
 import { authClient } from "@/lib/auth-client";
-import IdeaCard from "@/components/IdeaCard";
 import { useEffect, useState } from "react";
+import MyIdeaCard from "@/components/MyIdeaCard";
 
 const MyIdeasCard = () => {
 
@@ -28,18 +28,18 @@ const MyIdeasCard = () => {
 
     return (
 
-        <div className="mt-10">
+        <div className="mt-10 ">
 
-            <h2 className="mb-8 text-3xl font-bold text-cyan-700">
+            <h2 className="mb-8 text-3xl font-bold text-cyan-700 text-center">
                 My Ideas
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-5">
 
                 {
                     ideas.map(
                         idea=>(
-                            <IdeaCard
+                            <MyIdeaCard
                               key={idea._id}
                               idea={idea}
                             />
