@@ -14,10 +14,10 @@ const MyIdeasCard = () => {
 
     useEffect(()=>{
 
-        if(user?.email){
+        if(user?.id){
 
             fetch(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/my-ideas/${user.email}`
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/my-ideas/${user.id}`
             )
             .then(res=>res.json())
             .then(data=>setIdeas(data))

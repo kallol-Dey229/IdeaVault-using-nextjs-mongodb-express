@@ -14,7 +14,7 @@ const AddIdeasPage = () => {
         const idea = Object.fromEntries(formData.entries());
 
 
-        idea.userEmail = user?.email;
+        idea.userId = user?.id;
         idea.userName = user?.name;
         idea.userImage = user?.image;
 
