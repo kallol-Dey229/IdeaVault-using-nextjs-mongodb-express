@@ -2,6 +2,8 @@
 
 import { authClient } from "@/lib/auth-client";
 import {Form, Input, Label, TextArea, Select, ListBox, Button } from "@heroui/react";
+import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
 
 const AddIdeasPage = () => {
 
@@ -27,6 +29,11 @@ const AddIdeasPage = () => {
         })
 
         const data = await res.json();
+
+        if(data){
+            toast.success('Idea added successfully!');
+            redirect('/ideas');
+        }
         
     }
     return (

@@ -2,7 +2,8 @@
 
 import { Envelope } from "@gravity-ui/icons";
 import { Button, Form, Input, Label, Modal, Surface, TextArea, Select, ListBox } from "@heroui/react";
-import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
+import { FaEdit, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 export function EditModal({ idea }) {
 
@@ -22,31 +23,31 @@ export function EditModal({ idea }) {
             body: JSON.stringify(idea)
         })
 
-        // const data = await res.json();
+        if (res.ok) {
+            toast.success('Idea updated successfully!');
+        } 
 
     }
 
     return (
         <Modal>
-            <div className="flex flex-col gap-1">
+            
                 <Button size="xs" variant="outline" className={'hover:bg-cyan-200 rounded-sm w-full'}><FaRegEdit size={'xs'} />Edit</Button>
-                {/* <Button size="xs" variant="danger" className={'hover:bg-red-700 rounded-sm w-full'}><FaRegTrashAlt size={'xs'} />Delete</Button> */}
-            </div>
+            
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
                     <Modal.Dialog className="sm:max-w-2xl">
                         <Modal.CloseTrigger />
-                        <Modal.Header>
+                        <Modal.Header className="text-center">
                             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-                                <Envelope className="size-5" />
+                                <FaEdit className="size-5" />
                             </Modal.Icon>
-                            <Modal.Heading>Contact Us</Modal.Heading>
-                            <p className="mt-1.5 text-sm leading-5 text-muted">
-                                Fill out the form below and we will get back to you. The modal adapts automatically
-                                when the keyboard appears on mobile.
+                            <Modal.Heading className="text-xl md:text-2xl font-bold text-cyan-800">Edit Idea</Modal.Heading>
+                            <p className="mt-1.5 text-sm leading-5 text-cyan-900">
+                                Edit your idea details and update it to the community!
                             </p>
                         </Modal.Header>
-                        <Modal.Body className="p-6">
+                        <Modal.Body className="">
                             <Surface variant="default">
                                 <Form onSubmit={handleSubmit} className="flex mx-auto flex-col gap-4 mt-10 bg-slate-100 p-5 rounded-md">
 

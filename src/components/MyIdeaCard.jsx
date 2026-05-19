@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 import { EditModal } from "./EditModal";
+import { DeleteAlert } from "./DeleteAlert";
 
 const MyIdeaCard = ({ idea }) => {
     const { _id, title, shortDescription, estimatedBudget, targetAudience, imageURL, category } = idea;
@@ -43,8 +44,10 @@ const MyIdeaCard = ({ idea }) => {
                         {shortDescription}
                     </p>
                 </div>
-
+                    <div className="flex flex-col gap-1">
                 <EditModal idea={idea} />
+                <DeleteAlert idea={idea} />
+                </div>
                 </div>
 
                 <div className="rounded-2xl bg-cyan-50 p-3">
@@ -82,7 +85,7 @@ const MyIdeaCard = ({ idea }) => {
                         View Idea
                     </Button>
                 </Link>
-
+ 
             </div>
 
         </div>
