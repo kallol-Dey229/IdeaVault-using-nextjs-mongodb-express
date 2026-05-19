@@ -3,30 +3,45 @@
 import { authClient } from "@/lib/auth-client";
 import { Button, Separator, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
 const LoginPage = () => {
+
+    
+    const searchParams = useSearchParams();
+
+    const redirectPath =
+        searchParams.get("redirect") || "/";
+
+
     const OnSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const user = Object.fromEntries(formData.entries());
 
 
-        const { data, error } = await authClient.signIn.email({
-            email: user.email,
-            password: user.password
-        });
+        const { data, error } =
+            await authClient.signIn.email({
+                email: user.email,
+                password: user.password
+            });
 
         if (data) {
-            redirect('/');
+            
+            toast.success('Login successful!');
+            redirect(redirectPath);
+            
         }
+
         if (error) {
-            toast.error("Login failed: " + error.message);
+            toast.error(
+                "Login failed: " + error.message
+            );
         }
     }
- 
+
 
 
     const handleGoogleSignIn = async () => {
