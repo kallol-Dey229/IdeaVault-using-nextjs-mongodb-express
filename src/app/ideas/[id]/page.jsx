@@ -5,7 +5,7 @@ const IdeaDetailsPage = async ({ params }) => {
 
     const { id } = await params;
 
-    const res = await fetch(`http://localhost:8000/idea/${id}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea/${id}`);
     const idea = await res.json();
 
     const { _id, title, detailedDescription, estimatedBudget, targetAudience, imageURL, problemStatement, proposedSolution } = idea;
