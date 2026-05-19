@@ -1,3 +1,4 @@
+import CommentCard from "@/components/CommentCard";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 
@@ -13,7 +14,7 @@ const IdeaDetailsPage = async ({ params }) => {
     return (
         <div className="min-h-screen bg-cyan-50/40 py-10 px-4">
 
-            <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-white shadow-lg">
+            <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-cyan-50 shadow-lg">
 
                 <div className="grid md:grid-cols-2">
 
@@ -47,7 +48,7 @@ const IdeaDetailsPage = async ({ params }) => {
 
                         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                            <div className="rounded-2xl bg-cyan-50 p-4">
+                            <div className="rounded-2xl bg-cyan-50 shadow-md p-4">
 
                                 <p className="text-sm text-slate-500">
                                     <span className="font-semibold">Estimated Budget:</span>
@@ -59,7 +60,7 @@ const IdeaDetailsPage = async ({ params }) => {
 
                             </div>
 
-                            <div className="rounded-2xl bg-cyan-50 p-4">
+                            <div className="rounded-2xl bg-cyan-50 shadow-md p-4">
 
                                 <p className="text-sm text-slate-500">
                                     <span className="font-semibold">Target Audience:</span>
@@ -80,99 +81,7 @@ const IdeaDetailsPage = async ({ params }) => {
 
             </div>
 
-
-
-
-
-
-
-
-
-
-            <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-white p-6 shadow-lg">
-
-                <div className="mb-6">
-
-                    <h2 className="text-2xl font-bold text-gray-700">
-                        Comments
-                    </h2>
-
-                    <p className="mt-1 text-sm text-gray-500">
-                        Share your feedback and suggestions
-                    </p>
-
-                </div>
-
-                <div className="space-y-4">
-
-                    <div className="rounded-2xl bg-cyan-50 p-4">
-
-                        <div className="flex items-center gap-3">
-
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500 text-white font-semibold">
-                                P
-                            </div>
-
-                            <div>
-                                <h3 className="font-semibold text-gray-700">
-                                    Partha
-                                </h3>
-
-                                <p className="text-xs text-gray-500">
-                                    2 hours ago
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <p className="mt-3 text-gray-600">
-                            Great idea. The proposed solution looks promising.
-                        </p>
-
-                    </div>
-
-                    <div className="rounded-2xl bg-cyan-50 p-4">
-
-                        <div className="flex items-center gap-3">
-
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500 text-white font-semibold">
-                                A
-                            </div>
-
-                            <div>
-                                <h3 className="font-semibold text-gray-700">
-                                    Alex
-                                </h3>
-
-                                <p className="text-xs text-gray-500">
-                                    Yesterday
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <p className="mt-3 text-gray-600">
-                            Consider adding more details about implementation cost.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div className="mt-8">
-
-                    <textarea
-                        placeholder="Write your comment..."
-                        className="min-h-32 w-full rounded-2xl border border-cyan-100 bg-cyan-50 p-4 outline-none focus:border-cyan-400"
-                    />
-
-                    <Button className="mt-4 rounded-sm bg-cyan-500 px-6 py-3 text-white transition hover:bg-cyan-600">
-                        Add Comment
-                    </Button>
-
-                </div>
-
-            </div>
+            <CommentCard ideaId = {id}/>
 
         </div>
     );

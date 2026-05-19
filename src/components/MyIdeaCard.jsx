@@ -9,7 +9,7 @@ const MyIdeaCard = ({ idea }) => {
     const { _id, title, shortDescription, estimatedBudget, targetAudience, imageURL, category } = idea;
  
     return (
-        <div className="group overflow-hidden rounded-3xl border border-cyan-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg">
+        <div className="group overflow-hidden rounded-3xl border border-cyan-100 bg-cyan-50 shadow-sm transition-shadow duration-300 hover:shadow-lg">
 
             <div className="relative h-44 overflow-hidden">
 
