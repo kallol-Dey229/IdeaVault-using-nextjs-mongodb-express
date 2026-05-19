@@ -81,7 +81,7 @@ const IdeaDetailsPage = async ({ params }) => {
 
             </div>
 
-            <CommentCard ideaId = {id}/>
+            <CommentCard ideaId = {id} ideaTitle = {title} />
 
         </div>
     );

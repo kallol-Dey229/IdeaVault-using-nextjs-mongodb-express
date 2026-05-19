@@ -1,11 +1,11 @@
+import MyInteractionsCard from "@/components/MyInteractionCard";
 
 
-const MyInteractionsPage = () => {
-    return (
-        <div>
-            <h2>My Interactions</h2>
-        </div>
-    );
+
+const MyInteractionsPage=()=>{
+
+return <MyInteractionsCard/>
+
 };
 
 export default MyInteractionsPage;

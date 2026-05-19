@@ -6,7 +6,7 @@ import ShowComment from "./ShowComment";
 import { authClient } from "@/lib/auth-client";
 
 
-const CommentCard = ({ ideaId }) => {
+const CommentCard = ({ ideaId, ideaTitle }) => {
 
     const { data: session } = authClient.useSession();
 
@@ -15,49 +15,53 @@ const CommentCard = ({ ideaId }) => {
 
     const OnSubmit = async (e) => {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+        const formData = new FormData(e.currentTarget);
 
-    const comment = {
+        const comment = {
 
-        ideaId,
+            ideaId,
 
-        comment: formData.get("comment"),
+            ideaTitle,
 
-        userName: user?.name,
+            comment: formData.get("comment"),
 
-        userImage: user?.image,
+            userId: user?.id,
 
-        createdAt: new Date()
+            userName: user?.name,
+
+            userImage: user?.image || "",
+
+            createdAt: new Date()
+
+        };
+
+        const res = await fetch(
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/comment`,
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(comment)
+            }
+        );
+
+        const data = await res.json();
+
+        if (data.insertedId) {
+
+            toast.success("Comment added!");
+
+            e.target.reset();
+            window.location.reload();
+
+        }
 
     };
-
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/comment`,
-        {
-            method: "POST",
-
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify(comment)
-        }
-    );
-
-    const data = await res.json();
-
-    if (data.insertedId) {
-
-        toast.success("Comment added!");
-
-        e.target.reset();
-        window.location.reload();
-
-    }
-
-};
 
     return (
         <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-cyan-50 p-6 shadow-lg">
@@ -80,7 +84,7 @@ const CommentCard = ({ ideaId }) => {
 
                 <textarea name="comment"
                     placeholder="Write your comment..."
-                    className="min-h-32 w-full rounded-2xl border border-cyan-600 bg-cyan-50 p-4 outline-none focus:border-cyan-400"
+                    className="min-h-32 w-full rounded-2xl border-2 border-cyan-600 bg-cyan-50 p-4 outline-none focus:border-cyan-400"
                 />
 
                 <Button type="submit" className="mt-4 rounded-sm bg-cyan-500 px-6 py-3 text-white transition hover:bg-cyan-600">
