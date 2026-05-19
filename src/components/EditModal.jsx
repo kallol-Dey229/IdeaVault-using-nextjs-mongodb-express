@@ -1,8 +1,7 @@
 "use client";
 
-import { Envelope } from "@gravity-ui/icons";
 import { Button, Form, Input, Label, Modal, Surface, TextArea, Select, ListBox } from "@heroui/react";
-import { FaEdit, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
+import { FaEdit, FaRegEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 export function EditModal({ idea }) {
@@ -36,7 +35,7 @@ export function EditModal({ idea }) {
             
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
-                    <Modal.Dialog className="sm:max-w-2xl">
+                    <Modal.Dialog className="sm:min-w-xl bg-cyan-50 shadow-lg">
                         <Modal.CloseTrigger />
                         <Modal.Header className="text-center">
                             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
@@ -49,45 +48,45 @@ export function EditModal({ idea }) {
                         </Modal.Header>
                         <Modal.Body className="">
                             <Surface variant="default">
-                                <Form onSubmit={handleSubmit} className="flex mx-auto flex-col gap-4 mt-10 bg-slate-100 p-5 rounded-md">
+                                <Form onSubmit={handleSubmit} className="flex mx-auto flex-col gap-4 mt-10 bg-cyan-50 shadow-xl p-5 rounded-md">
 
                                     <div className="flex flex-col gap-1">
                                         <Label>Idea Title</Label>
-                                        <Input defaultValue={title} name="title" placeholder="Write your title" type="text" required />
+                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={title} name="title" placeholder="Write your title" type="text" required />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <Label>Short Description</Label>
-                                        <Input defaultValue={shortDescription} name="shortDescription" placeholder="Write a short description" type="text" required />
+                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={shortDescription} name="shortDescription" placeholder="Write a short description" type="text" required />
                                     </div>
 
                                     <div className="flex flex-col gap-1">
                                         <Label>Detailed Description</Label>
-                                        <TextArea defaultValue={detailedDescription} name="detailedDescription" required></TextArea>
+                                        <TextArea className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={detailedDescription} name="detailedDescription" required></TextArea>
                                     </div>
 
                                     <div className="flex flex-col gap-1">
 
                                         <Select defaultValue={category} name="category" className="w-[256px]" placeholder="Select Category" required>
                                             <Label>Category</Label>
-                                            <Select.Trigger>
+                                            <Select.Trigger className={'bg-cyan-50 border-cyan-100 border-2'}>
                                                 <Select.Value />
                                                 <Select.Indicator />
                                             </Select.Trigger>
                                             <Select.Popover>
-                                                <ListBox>
-                                                    <ListBox.Item id="tech" textValue="Tech">
+                                                <ListBox className={'bg-cyan-50 border-cyan-100 border-2'}>
+                                                    <ListBox.Item className="hover:bg-cyan-600 hover:text-white" id="tech" textValue="Tech">
                                                         Tech
                                                         <ListBox.ItemIndicator />
                                                     </ListBox.Item>
-                                                    <ListBox.Item id="health" textValue="Health">
+                                                    <ListBox.Item className="hover:bg-cyan-600 hover:text-white" id="health" textValue="Health">
                                                         Health
                                                         <ListBox.ItemIndicator />
                                                     </ListBox.Item>
-                                                    <ListBox.Item id="ai" textValue="AI">
+                                                    <ListBox.Item className="hover:bg-cyan-600 hover:text-white" id="ai" textValue="AI">
                                                         AI
                                                         <ListBox.ItemIndicator />
                                                     </ListBox.Item>
-                                                    <ListBox.Item id="education" textValue="Education">
+                                                    <ListBox.Item className="hover:bg-cyan-600 hover:text-white" id="education" textValue="Education">
                                                         Education
                                                         <ListBox.ItemIndicator />
                                                     </ListBox.Item>
@@ -102,28 +101,28 @@ export function EditModal({ idea }) {
 
                                     <div className="flex flex-col gap-1">
                                         <Label>tags(optional)</Label>
-                                        <Input defaultValue={tags} name="tags" placeholder="tags" type="text" />
+                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={tags} name="tags" placeholder="tags" type="text" />
                                     </div>
 
                                     <div className="flex flex-col gap-1">
                                         <Label>ImageURL</Label>
-                                        <Input defaultValue={imageURL} name="imageURL" placeholder="Image URL" type="text" required />
+                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={imageURL} name="imageURL" placeholder="Image URL" type="text" required />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <Label>Estimated Budget (optional)</Label>
-                                        <Input defaultValue={estimatedBudget} name="estimatedBudget" placeholder="Budget" type="text" />
+                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={estimatedBudget} name="estimatedBudget" placeholder="Budget" type="text" />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <Label>Target Audience</Label>
-                                        <Input defaultValue={targetAudience} name="targetAudience" placeholder="Audience" type="text" required />
+                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={targetAudience} name="targetAudience" placeholder="Audience" type="text" required />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <Label>Problem Statement</Label>
-                                        <Input defaultValue={problemStatement} name="problemStatement" placeholder="Write Problem Statement" type="text" required />
+                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={problemStatement} name="problemStatement" placeholder="Write Problem Statement" type="text" required />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <Label>Proposed Solution</Label>
-                                        <Input defaultValue={proposedSolution} name="proposedSolution" placeholder="Write Proposed Solution" type="text" required />
+                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={proposedSolution} name="proposedSolution" placeholder="Write Proposed Solution" type="text" required />
                                     </div>
 
                                     <Modal.Footer>
