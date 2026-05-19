@@ -1,13 +1,22 @@
 'use client'
 
+import { authClient } from "@/lib/auth-client";
 import {Form, Input, Label, TextArea, Select, ListBox, Button } from "@heroui/react";
 
 const AddIdeasPage = () => {
+
+    const { data: session } = authClient.useSession();
+    const user = session?.user;
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
         const idea = Object.fromEntries(formData.entries());
 
+
+        idea.userEmail = user?.email;
+        idea.userName = user?.name;
+        idea.userImage = user?.image;
 
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea`, {
             method: 'POST',
