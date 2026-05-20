@@ -1,8 +1,9 @@
 "use client";
 
 import { Button, Form, Input, Label, Modal, Surface, TextArea, Select, ListBox } from "@heroui/react";
+import toast from "react-hot-toast";
 import { FaEdit, FaRegEdit } from "react-icons/fa";
-import { toast } from "react-toastify";
+
 
 export function EditModal({ idea }) {
 
@@ -22,9 +23,14 @@ export function EditModal({ idea }) {
             body: JSON.stringify(idea)
         })
 
-        if (res.ok) {
+        const data = await res.json();
+
+        if (data.modifiedCount > 0) {
+            window.location.reload();
             toast.success('Idea updated successfully!');
         } 
+        
+
 
     }
 
