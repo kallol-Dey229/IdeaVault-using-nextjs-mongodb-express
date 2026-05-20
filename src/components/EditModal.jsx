@@ -33,7 +33,7 @@ export function EditModal({ idea }) {
 
 
     }
-
+//
     return (
         <Modal>
             
