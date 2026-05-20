@@ -37,13 +37,17 @@ const CommentCard = ({ ideaId, ideaTitle }) => {
 
         };
 
+        const { data: tokenData } = await authClient.token();
+
+
         const res = await fetch(
             `${process.env.NEXT_PUBLIC_SERVER_URL}/comment`,
             {
                 method: "POST",
 
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${tokenData.token}`
                 },
 
                 body: JSON.stringify(comment)

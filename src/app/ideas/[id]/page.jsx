@@ -1,12 +1,24 @@
 import CommentCard from "@/components/CommentCard";
+import { auth } from "@/lib/auth";
 import { Button } from "@heroui/react";
+import { headers } from "next/headers";
 import Image from "next/image";
 
 const IdeaDetailsPage = async ({ params }) => {
 
     const { id } = await params;
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea/${id}`);
+    const {token} = await auth.api.getToken({
+        headers : await headers()
+    });
+
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea/${id}`,{
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    });
+
+    
     const idea = await res.json();
 
     const { _id, title, detailedDescription, estimatedBudget, targetAudience, imageURL, problemStatement, proposedSolution } = idea;

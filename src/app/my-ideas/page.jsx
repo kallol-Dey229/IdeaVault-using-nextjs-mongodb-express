@@ -12,19 +12,36 @@ const MyIdeasCard = () => {
 
     const [ideas,setIdeas] = useState([]);
 
+    
+
     useEffect(()=>{
+
+    const loadIdeas = async()=>{
 
         if(user?.id){
 
-            fetch(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/my-ideas/${user.id}`
-            )
-            .then(res=>res.json())
-            .then(data=>setIdeas(data))
+            const {data:tokenData} = await authClient.token();
+
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my-ideas/${user.id}`,{
+                    headers:{
+                        Authorization:
+                        `Bearer ${tokenData.token}`
+                    }
+                }
+
+            );
+
+            const data = await res.json();
+
+            setIdeas(data);
 
         }
 
-    },[user])
+    }
+
+    loadIdeas();
+
+},[user]);
 
     return (
 

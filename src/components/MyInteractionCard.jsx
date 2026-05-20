@@ -13,15 +13,40 @@ const MyInteractionCard = () => {
 
 
 
-    useEffect(() => {
+   useEffect(() => {
 
-        if (user?.id) {
-            fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my-interactions/${user.id}`).then(res => res.json())
-            .then(data => setInteraction(data));
+    const loadInteractions = async () => {
+
+        if(user?.id){
+
+            const { data: tokenData } =
+            await authClient.token();
+
+            const res = await fetch(
+
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/my-interactions/${user.id}`,
+
+                {
+                    headers:{
+                        Authorization:
+                        `Bearer ${tokenData.token}`
+                    }
+                }
+
+            );
+
+            const data =
+            await res.json();
+
+            setInteraction(data);
 
         }
 
-    }, [user]);
+    }
+
+    loadInteractions();
+
+}, [user]);
 
 
 

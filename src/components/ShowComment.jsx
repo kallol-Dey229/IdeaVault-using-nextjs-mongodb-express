@@ -18,11 +18,33 @@ const ShowComment = ({ ideaId }) => {
 
     useEffect(() => {
 
-        fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/comment/${ideaId}`)
-            .then(res => res.json())
-            .then(data => setComments(data));
+    const loadComments = async () => {
 
-    }, [ideaId]);
+        const { data: tokenData } =
+        await authClient.token();
+
+        const res = await fetch(
+
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/comment/${ideaId}`,
+
+            {
+                headers: {
+                    Authorization:
+                    `Bearer ${tokenData.token}`
+                }
+            }
+
+        );
+
+        const data = await res.json();
+
+        setComments(data);
+
+    }
+
+    loadComments();
+
+}, [ideaId]);
 
     return (
 

@@ -2,15 +2,28 @@ import Banner from "@/components/Banner";
 import { FaLightbulb, FaUsers, FaComments } from "react-icons/fa";
 import { BsLightningChargeFill } from "react-icons/bs";
 import IdeaCard from "@/components/IdeaCard";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 export default async function Home() {
 
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/idea`,
-    { cache: "no-store" }
-  );
+  const { token } = await auth.api.getToken({
+        headers: await headers()
+    });
 
-  const ideas = await res.json();
+    const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/idea`,
+        {
+            cache: "no-store",
+
+            headers:{
+                Authorization:`Bearer ${token}`
+            }
+        }
+    );
+
+    const ideas = await res.json();
+
 
   return (
 
