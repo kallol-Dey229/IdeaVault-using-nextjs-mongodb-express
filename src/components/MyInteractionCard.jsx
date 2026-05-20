@@ -52,8 +52,8 @@ const MyInteractionCard = () => {
 
     return (
 
-        <div className="min-h-screen bg-cyan-50 py-10 px-4">
-            <div className="mx-auto max-w-5xl rounded-md bg-cyan-50 shadow-xl p-8">
+        <div className="min-h-screen py-10 px-4">
+            <div className="mx-auto max-w-5xl rounded-md shadow-xl p-8">
 
                 <div className="text-center">
 
@@ -67,7 +67,7 @@ const MyInteractionCard = () => {
 
                 <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                    <div className="rounded-md bg-cyan-50 p-6 shadow">
+                    <div className="rounded-md p-6 shadow">
 
                         <h3 className="text-lg font-semibold text-cyan-700">Total Comments
                         </h3>
@@ -84,7 +84,7 @@ const MyInteractionCard = () => {
 
 
 
-                    <div className="rounded-md bg-cyan-50 p-6 shadow">
+                    <div className="rounded-md p-6 shadow">
 
                         <h3 className="text-lg font-semibold text-cyan-700">Total Interactions
                         </h3>
@@ -103,7 +103,7 @@ const MyInteractionCard = () => {
 
 
 
-                <div className="mt-10 rounded-md bg-cyan-50 p-6">
+                <div className="mt-10 rounded-md p-6">
 
                     <h3 className="text-xl font-semibold text-cyan-700 mb-5">Recent Activities</h3>
 
@@ -115,7 +115,7 @@ const MyInteractionCard = () => {
                             interaction?.recentComments?.map(comment => (
 
                                         <div
-                                            key={comment._id} className="bg-cyan-50 p-4 space-y-4 rounded-md shadow-md">
+                                            key={comment._id} className=" p-4 space-y-4 rounded-md shadow-md">
 
                                             <p className="text-cyan-700 font-bold">{comment.ideaTitle}</p>
                                             <p className="text-cyan-600">{comment.comment}</p>

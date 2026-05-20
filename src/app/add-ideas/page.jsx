@@ -45,32 +45,32 @@ const AddIdeasPage = () => {
     return (
         <div className="mt-10">
             <h2 className="text-cyan-800 text-center font-bold text-xl md:text-3xl ">Add Your Idea</h2>
-            <Form onSubmit={handleSubmit} className="flex mx-auto flex-col gap-4 mt-5 bg-cyan-50 shadow-xl p-5 rounded-md">
+            <Form onSubmit={handleSubmit} className="flex mx-auto md:max-w-3xl md:min-w-2xl flex-col gap-4 mt-5 shadow-xl p-5 rounded-md">
 
                 <div className="flex flex-col gap-1">
                     <Label>Idea Title</Label>
-                    <Input className={'bg-cyan-50 border-cyan-100 border-2'} name="title" placeholder="Write your title" type="text" required />
+                    <Input className={' border-cyan-100 border-2'} name="title" placeholder="Write your title" type="text" required />
                 </div>
                 <div className="flex flex-col gap-1">
                     <Label>Short Description</Label>
-                    <Input className={'bg-cyan-50 border-cyan-100 border-2'} name="shortDescription" placeholder="Write a short description" type="text" required />
+                    <Input className={' border-cyan-100 border-2'} name="shortDescription" placeholder="Write a short description" type="text" required />
                 </div>
 
                 <div className="flex flex-col gap-1">
                     <Label>Detailed Description</Label>
-                    <TextArea className={'bg-cyan-50 border-cyan-100 border-2'} name="detailedDescription" required></TextArea>
+                    <TextArea className={' border-cyan-100 border-2'} name="detailedDescription" required></TextArea>
                 </div>
 
                 <div className="flex flex-col gap-1">
 
                     <Select name="category" className="w-[256px]" placeholder="Select Category" required>
                         <Label>Category</Label>
-                        <Select.Trigger className={'bg-cyan-50 border-cyan-100 border-2'}>
+                        <Select.Trigger className={'border-cyan-100 border-2'}>
                             <Select.Value />
                             <Select.Indicator />
                         </Select.Trigger>
                         <Select.Popover>
-                            <ListBox className={'bg-cyan-50 border-cyan-100 border-2'}>
+                            <ListBox className={' border-cyan-100 border-2'}>
                                 <ListBox.Item id="tech" textValue="Tech">
                                     Tech
                                     <ListBox.ItemIndicator />
@@ -98,28 +98,28 @@ const AddIdeasPage = () => {
 
                 <div className="flex flex-col gap-1">
                     <Label>tags(optional)</Label>
-                    <Input className={'bg-cyan-50 border-cyan-100 border-2'} name="tags" placeholder="tags" type="text" />
+                    <Input className={'border-cyan-100 border-2'} name="tags" placeholder="tags" type="text" />
                 </div>
 
                 <div className="flex flex-col gap-1">
                     <Label>ImageURL</Label>
-                    <Input className={'bg-cyan-50 border-cyan-100 border-2'} name="imageURL" placeholder="Image URL" type="text" required />
+                    <Input className={'border-cyan-100 border-2'} name="imageURL" placeholder="Image URL" type="text" required />
                 </div>
                 <div className="flex flex-col gap-1">
                     <Label>Estimated Budget (optional)</Label>
-                    <Input className={'bg-cyan-50 border-cyan-100 border-2'} name="estimatedBudget" placeholder="Budget" type="text" />
+                    <Input className={'border-cyan-100 border-2'} name="estimatedBudget" placeholder="Budget" type="text" />
                 </div>
                 <div className="flex flex-col gap-1">
                     <Label>Target Audience</Label>
-                    <Input className={'bg-cyan-50 border-cyan-100 border-2'} name="targetAudience" placeholder="Audience" type="text" required />
+                    <Input className={'border-cyan-100 border-2'} name="targetAudience" placeholder="Audience" type="text" required />
                 </div>
                 <div className="flex flex-col gap-1">
                     <Label>Problem Statement</Label>
-                    <Input className={'bg-cyan-50 border-cyan-100 border-2'} name="problemStatement" placeholder="Write Problem Statement" type="text" required />
+                    <Input className={'border-cyan-100 border-2'} name="problemStatement" placeholder="Write Problem Statement" type="text" required />
                 </div>
                 <div className="flex flex-col gap-1">
                     <Label>Proposed Solution</Label>
-                    <Input className={'bg-cyan-50 border-cyan-100 border-2'} name="proposedSolution" placeholder="Write Proposed Solution" type="text" required />
+                    <Input className={'border-cyan-100 border-2'} name="proposedSolution" placeholder="Write Proposed Solution" type="text" required />
                 </div>
 
                 <Button type="submit" className={'w-full rounded-sm bg-cyan-700 flex items-center justify-center gap-2'}> <GiDeadEye /> Add Idea</Button>

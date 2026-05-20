@@ -7,6 +7,7 @@ import { RightNav } from './RightNav';
 import { authClient } from '@/lib/auth-client';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { usePathname } from 'next/navigation';
+import { ThemeToggle } from './ThemeToggle';
 
 const Navbar = () => {
 
@@ -19,7 +20,7 @@ const Navbar = () => {
 
     return (
 
-        <div className='bg-cyan-50 py-3 fixed w-full z-10 top-0 left-0 shadow-md'>
+        <div className=' py-3 fixed w-full z-10 top-0 left-0 shadow-md'>
 
             <nav className='max-w-7xl mx-auto px-3 sm:px-4 flex items-center justify-between relative overflow-x-hidden'>
 
@@ -55,11 +56,10 @@ const Navbar = () => {
                     <li>
                         <Link
                             href={'/'}
-                            className={`  ${
-                                pathname === '/'
-                                    && 'border-cyan-800 pb-1 border-b-2'
-                                    
-                            }`}
+                            className={`  ${pathname === '/'
+                                && 'border-cyan-800 pb-1 border-b-2'
+
+                                }`}
                         >
                             Home
                         </Link>
@@ -68,11 +68,10 @@ const Navbar = () => {
                     <li>
                         <Link
                             href={'/ideas'}
-                            className={` ${
-                                pathname === '/ideas'
-                                    && 'border-cyan-800 pb-1 border-b-2'
-                                    
-                            }`}
+                            className={` ${pathname === '/ideas'
+                                && 'border-cyan-800 pb-1 border-b-2'
+
+                                }`}
                         >
                             Ideas
                         </Link>
@@ -85,11 +84,10 @@ const Navbar = () => {
                             <li>
                                 <Link
                                     href={'/add-ideas'}
-                                    className={` ${
-                                        pathname === '/add-ideas'
-                                            && 'border-cyan-800 pb-1 border-b-2'
-                                            
-                                    }`}
+                                    className={` ${pathname === '/add-ideas'
+                                        && 'border-cyan-800 pb-1 border-b-2'
+
+                                        }`}
                                 >
                                     Add Ideas
                                 </Link>
@@ -98,10 +96,9 @@ const Navbar = () => {
                             <li>
                                 <Link
                                     href={'/my-ideas'}
-                                    className={` ${
-                                        pathname === '/my-ideas'
-                                            && 'border-cyan-800 pb-1 border-b-2'
-                                    }`}
+                                    className={` ${pathname === '/my-ideas'
+                                        && 'border-cyan-800 pb-1 border-b-2'
+                                        }`}
                                 >
                                     My Ideas
                                 </Link>
@@ -110,10 +107,9 @@ const Navbar = () => {
                             <li>
                                 <Link
                                     href={'/my-interactions'}
-                                    className={` ${
-                                        pathname === '/my-interactions'
-                                            && 'border-cyan-800 pb-1 border-b-2'
-                                    }`}
+                                    className={` ${pathname === '/my-interactions'
+                                        && 'border-cyan-800 pb-1 border-b-2'
+                                        }`}
                                 >
                                     My Interactions
                                 </Link>
@@ -126,14 +122,27 @@ const Navbar = () => {
                 </ul>
 
 
-                
 
-                <div>
 
-                    { user ? <RightNav /> :
+                <div className='flex items-center gap-3'>
+
+                    <ThemeToggle />
+
+                    {
+
+                        user ?
+
+                            <RightNav />
+
+                            :
+
                             <Link
                                 href={'/login'}
-                                className='bg-cyan-800 text-white px-2 sm:px-4 py-2 rounded-md text-sm sm:text-base'>Login
+                                className='bg-cyan-800 text-white px-2 sm:px-4 py-2 rounded-md text-sm sm:text-base'
+                            >
+
+                                Login
+
                             </Link>
 
                     }
@@ -143,7 +152,7 @@ const Navbar = () => {
             </nav>
 
 
-            
+
 
             {
 
@@ -157,10 +166,9 @@ const Navbar = () => {
 
                                 <Link
                                     href={'/'}
-                                    className={` ${
-                                        pathname === '/'
-                                            && 'border-cyan-800 pb-1 border-b-2'
-                                    }`}>Home
+                                    className={` ${pathname === '/'
+                                        && 'border-cyan-800 pb-1 border-b-2'
+                                        }`}>Home
                                 </Link>
 
                             </li>
@@ -169,55 +177,51 @@ const Navbar = () => {
 
                                 <Link
                                     href={'/ideas'}
-                                    className={` ${
-                                        pathname === '/ideas'
-                                            && 'border-cyan-800 pb-1 border-b-2'
-                                    }`}>Ideas
+                                    className={` ${pathname === '/ideas'
+                                        && 'border-cyan-800 pb-1 border-b-2'
+                                        }`}>Ideas
                                 </Link>
 
                             </li>
 
-                            { user && ( <>
+                            {user && (<>
 
-                                        <li>
+                                <li>
 
-                                            <Link
-                                                href={'/add-ideas'}
-                                                className={` w-fit ${
-                                                    pathname === '/add-ideas'
-                                                        && 'border-cyan-800 pb-1 border-b-2'
-                                                }`} > Add Ideas
-                                            </Link>
+                                    <Link
+                                        href={'/add-ideas'}
+                                        className={` w-fit ${pathname === '/add-ideas'
+                                            && 'border-cyan-800 pb-1 border-b-2'
+                                            }`} > Add Ideas
+                                    </Link>
 
-                                        </li>
+                                </li>
 
-                                        <li>
+                                <li>
 
-                                            <Link
-                                                href={'/my-ideas'}
-                                                className={` w-fit ${
-                                                    pathname === '/my-ideas'
-                                                        && 'border-cyan-800 pb-1 border-b-2'
-                                                }`} >My Ideas
-                                            </Link>
+                                    <Link
+                                        href={'/my-ideas'}
+                                        className={` w-fit ${pathname === '/my-ideas'
+                                            && 'border-cyan-800 pb-1 border-b-2'
+                                            }`} >My Ideas
+                                    </Link>
 
-                                        </li>
+                                </li>
 
-                                        <li>
+                                <li>
 
-                                            <Link
-                                                href={'/my-interactions'}
-                                                className={`w-fit ${
-                                                    pathname === '/my-interactions'
-                                                        && 'border-cyan-800 pb-1 border-b-2'
-                                                }`}> My Interactions
-                                            </Link>
+                                    <Link
+                                        href={'/my-interactions'}
+                                        className={`w-fit ${pathname === '/my-interactions'
+                                            && 'border-cyan-800 pb-1 border-b-2'
+                                            }`}> My Interactions
+                                    </Link>
 
-                                        </li>
+                                </li>
 
-                                    </>
+                            </>
 
-                                )
+                            )
 
                             }
 
