@@ -30,10 +30,10 @@ export function DeleteCommentAlert({ comment }) {
 
     return (
         <AlertDialog>
-            <Button variant="danger" className="rounded-sm w-full" >Delete</Button>
+            <Button variant="danger" className="rounded-md w-full" >Delete</Button>
             <AlertDialog.Backdrop>
                 <AlertDialog.Container>
-                    <AlertDialog.Dialog className="sm:max-w-100">
+                    <AlertDialog.Dialog className="sm:max-w-100 bg-cyan-50">
                         <AlertDialog.CloseTrigger />
                         <AlertDialog.Header>
                             <AlertDialog.Icon status="danger" />
@@ -46,7 +46,7 @@ export function DeleteCommentAlert({ comment }) {
                             </p>
                         </AlertDialog.Body>
                         <AlertDialog.Footer>
-                            <Button slot="close" variant="tertiary">
+                            <Button slot="close" variant="outline" className={'text-cyan-800 border-cyan-800'}>
                                 Cancel
                             </Button>
                             <Button onClick={handleDeleteComment} slot="close" variant="danger">

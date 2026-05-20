@@ -9,97 +9,101 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
-  return (
-    <footer className="bg-cyan-950 text-white mt-10">
-      <div className="max-w-7xl mx-auto px-8 py-14 grid md:grid-cols-3 gap-10">
 
-        {/* Logo + About */}
+  return (
+
+    <footer className="bg-cyan-950 text-white mt-10 overflow-x-hidden">
+
+      <div className="max-w-7xl mx-auto px-5 md:px-8 py-12 text-center md:text-left grid grid-cols-1 md:grid-cols-3 gap-10">
+
         <div>
-          <h2 className="text-5xl font-bold text-cyan-300 mb-4">
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cyan-300 mb-4">
+
             IDEAVAULT
+
           </h2>
 
-          <p className="text-gray-300 leading-7">
+          <p className="text-gray-300 leading-7 text-sm md:text-base">
+
             Discover, share and explore innovative ideas with the community.
-            Turn creativity into inspiration.
+
           </p>
+
         </div>
 
-        {/* Platform Links */}
+
+
         <div>
-          <h3 className="text-xl font-semibold text-cyan-300 mb-5">
-            Platform
-          </h3>
+
+          <h3 className="text-xl font-semibold text-cyan-300 mb-5">Platform</h3>
 
           <div className="flex flex-col gap-3 text-gray-300">
+
             <Link href="/">Home</Link>
+
             <Link href="/ideas">Ideas</Link>
-            <Link href="/categories">Categories</Link>
+
             <Link href="/addIdeas">Add Ideas</Link>
+
             <Link href="/myIdeas">My Ideas</Link>
+
           </div>
+
         </div>
 
-        {/* Contact */}
+
+
         <div>
-          <h3 className="text-xl font-semibold text-cyan-300 mb-5">
-            Contact
-          </h3>
 
-          <div className="space-y-4 text-gray-300">
+          <h3 className="text-xl font-semibold text-cyan-300 mb-5">Contact</h3>
 
-            <div className="flex items-center gap-3">
-              <FaEnvelope className="text-cyan-400" />
-              info@ideavault.com
+          <div className="space-y-4 text-gray-300 flex flex-col justify-center items-center md:items-start">
+
+            <div className="flex gap-3">
+              <FaEnvelope className="text-cyan-400" />info@ideavault.com
             </div>
 
-            <div className="flex items-center gap-3">
-              <FaPhone className="text-cyan-400" />
-              +880 1908064940
+            <div className="flex gap-3">
+              <FaPhone className="text-cyan-400" />+8801908064940
             </div>
 
-            <div className="flex items-center gap-3">
-              <FaMapMarkerAlt className="text-cyan-400" />
-              Dhaka, Bangladesh
+            <div className="flex gap-3">
+              <FaMapMarkerAlt className="text-cyan-400" />Dhaka,Bangladesh
             </div>
 
-            
             <div className="flex gap-4 pt-4">
 
-              <a
-                href="#"
-                className="bg-cyan-800 p-3 rounded-full hover:bg-cyan-600 transition"
-              >
+              <a className="bg-cyan-800 p-3 rounded-full">
                 <FaFacebookF />
               </a>
 
-              <a
-                href="#"
-                className="bg-cyan-800 p-3 rounded-full hover:bg-cyan-600 transition"
-              >
+              <a className="bg-cyan-800 p-3 rounded-full">
                 <FaTwitter />
               </a>
 
-              <a
-                href="#"
-                className="bg-cyan-800 p-3 rounded-full hover:bg-cyan-600 transition"
-              >
+              <a className="bg-cyan-800 p-3 rounded-full">
                 <FaLinkedinIn />
               </a>
 
             </div>
 
           </div>
+
         </div>
 
       </div>
 
-      
-      <div className="border-t border-cyan-800 py-5 text-center text-gray-400">
+      <div className="border-t border-cyan-800 py-5 text-center text-gray-400 text-sm">
+
         © 2026 IDEAVAULT. All Rights Reserved.
+
       </div>
+
     </footer>
+
   );
+
 };
 
 export default Footer;

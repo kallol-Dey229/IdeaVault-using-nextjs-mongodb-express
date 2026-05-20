@@ -82,7 +82,7 @@ const ShowComment = ({ ideaId }) => {
 
                             </div>
                             {user?.id === comment.userId && (
-                                <div className="flex gap-2">
+                                <div className="flex gap-2 flex-col items-center md:flex-row">
                                     <EditCommentModal comment={comment} />
                                     <DeleteCommentAlert comment={comment} />
                                 </div>

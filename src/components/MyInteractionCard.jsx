@@ -32,7 +32,7 @@ const MyInteractionCard = () => {
 
                 <div className="text-center">
 
-                    <h2 className="text-3xl font-bold text-cyan-700">My Interactions</h2>
+                    <h2 className="text-3xl font-bold text-cyan-700">All Interactions</h2>
 
                     <p className="mt-2 text-cyan-600">View your activity</p>
 

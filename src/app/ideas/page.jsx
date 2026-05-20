@@ -12,7 +12,7 @@ const IdeasPage = async () => {
 
     return (
 
-        <div className="grid grid-cols-4 gap-4 mt-10 mx-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 mx-5">
 
             {
                 ideas.map((idea)=>(

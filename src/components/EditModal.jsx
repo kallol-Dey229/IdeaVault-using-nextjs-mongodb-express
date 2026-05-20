@@ -37,7 +37,7 @@ export function EditModal({ idea }) {
     return (
         <Modal>
             
-                <Button size="xs" variant="outline" className={'hover:bg-cyan-200 rounded-sm w-full'}><FaRegEdit size={'xs'} />Edit</Button>
+                <Button size="xs" variant="outline" className={'hover:bg-cyan-200 rounded-md w-full'}><FaRegEdit size={'xs'} />Edit</Button>
             
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
