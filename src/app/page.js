@@ -27,7 +27,7 @@ export default async function Home() {
 
   return (
 
-    <div className="bg-cyan-50 min-h-screen overflow-x-hidden">
+    <div className=" min-h-screen overflow-x-hidden">
 
       <Banner />
 
@@ -64,7 +64,7 @@ export default async function Home() {
 
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <div className="bg-cyan-50 p-5 md:p-6 rounded-2xl shadow-md">
+          <div className=" p-5 md:p-6 rounded-2xl shadow-md">
             <h3 className="font-bold text-lg md:text-xl text-cyan-700">
               Smart Education App
             </h3>
@@ -74,7 +74,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="bg-cyan-50 p-5 md:p-6 rounded-2xl shadow-md">
+          <div className=" p-5 md:p-6 rounded-2xl shadow-md">
             <h3 className="font-bold text-lg md:text-xl text-cyan-700">
               Green Energy System
             </h3>
@@ -84,7 +84,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="bg-cyan-50 p-5 md:p-6 rounded-2xl shadow-md">
+          <div className=" p-5 md:p-6 rounded-2xl shadow-md">
             <h3 className="font-bold text-lg md:text-xl text-cyan-700">
               Health Tracker
             </h3>
@@ -102,7 +102,7 @@ export default async function Home() {
           Idea Vault In Numbers
         </h2>
 
-        <div className="mt-10 bg-cyan-50 rounded-2xl p-6 md:p-10 shadow-xl">
+        <div className="mt-10  rounded-2xl p-6 md:p-10 shadow-xl">
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
@@ -158,22 +158,22 @@ export default async function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
 
-          <div className="bg-cyan-50 p-6 rounded-2xl shadow-md text-center">
+          <div className=" p-6 rounded-2xl shadow-md text-center">
             <FaLightbulb className="mx-auto text-3xl text-cyan-700"/>
             <p className="mt-4">Share Ideas</p>
           </div>
 
-          <div className="bg-cyan-50 p-6 rounded-2xl shadow-md text-center">
+          <div className=" p-6 rounded-2xl shadow-md text-center">
             <FaComments className="mx-auto text-3xl text-cyan-700"/>
             <p className="mt-4">Community Feedback</p>
           </div>
 
-          <div className="bg-cyan-50 p-6 rounded-2xl shadow-md text-center">
+          <div className=" p-6 rounded-2xl shadow-md text-center">
             <FaUsers className="mx-auto text-3xl text-cyan-700"/>
             <p className="mt-4">Connect Users</p>
           </div>
 
-          <div className="bg-cyan-50 p-6 rounded-2xl shadow-md text-center">
+          <div className=" p-6 rounded-2xl shadow-md text-center">
             <BsLightningChargeFill className="mx-auto text-3xl text-cyan-700"/>
             <p className="mt-4">Fast Interaction</p>
           </div>

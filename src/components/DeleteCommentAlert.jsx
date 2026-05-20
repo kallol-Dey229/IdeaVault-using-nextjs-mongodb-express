@@ -33,7 +33,7 @@ export function DeleteCommentAlert({ comment }) {
             <Button variant="danger" className="rounded-md w-full" >Delete</Button>
             <AlertDialog.Backdrop>
                 <AlertDialog.Container>
-                    <AlertDialog.Dialog className="sm:max-w-100 bg-cyan-50">
+                    <AlertDialog.Dialog className="sm:max-w-100 ">
                         <AlertDialog.CloseTrigger />
                         <AlertDialog.Header>
                             <AlertDialog.Icon status="danger" />

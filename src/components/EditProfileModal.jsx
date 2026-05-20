@@ -46,7 +46,7 @@ export function EditProfileModal({ user }) {
             </Button>
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
-                    <Modal.Dialog className="sm:max-w-md bg-cyan-50 shadow-lg">
+                    <Modal.Dialog className="sm:max-w-md shadow-lg">
                         <Modal.CloseTrigger />
                         <Modal.Header className="text-center">
                             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
@@ -59,17 +59,17 @@ export function EditProfileModal({ user }) {
                         </Modal.Header>
                         <Modal.Body className="p-6">
                             <Surface variant="default">
-                                <Form onSubmit={handleUpdateProfile} className="flex mx-auto flex-col gap-4 mt-10 bg-cyan-50 shadow-xl p-5 rounded-md">
+                                <Form onSubmit={handleUpdateProfile} className="flex mx-auto flex-col gap-4 mt-10 shadow-xl p-5 rounded-md">
 
                                     <div className="flex flex-col gap-1">
                                         <Label>Name</Label>
-                                        <Input defaultValue={user?.name} className={'bg-cyan-50 border-cyan-100 border-2'} name="name" placeholder="Write Your Name" type="text" required />
+                                        <Input defaultValue={user?.name} className={' border-cyan-100 border-2'} name="name" placeholder="Write Your Name" type="text" required />
                                     </div>
                                     
 
                                     <div className="flex flex-col gap-1">
                                         <Label>Image Url</Label>
-                                        <Input defaultValue={user?.image} className={'bg-cyan-50 border-cyan-100 border-2'} name="imageUrl" placeholder="Enter Your Image URL" type="text" required />
+                                        <Input defaultValue={user?.image} className={' border-cyan-100 border-2'} name="imageUrl" placeholder="Enter Your Image URL" type="text" required />
                                     </div>
 
                                     <Modal.Footer>

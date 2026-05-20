@@ -44,11 +44,11 @@ export function EditCommentModal({ comment }) {
     return (
         <Modal>
 
-            <Button size="xs" variant="outline" className={'hover:bg-cyan-200 rounded-md w-full'}><FaRegEdit size={'xs'} />Edit</Button>
+            <Button size="xs" variant="outline" className={'hover:bg-cyan-200 rounded-md w-full text-black'}><FaRegEdit size={'xs'} />Edit</Button>
 
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
-                    <Modal.Dialog className="sm:min-w-xl bg-cyan-50 shadow-lg">
+                    <Modal.Dialog className="sm:min-w-xl shadow-lg">
                         <Modal.CloseTrigger />
                         <Modal.Header className="text-center">
                             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
@@ -65,7 +65,7 @@ export function EditCommentModal({ comment }) {
 
                                     <textarea defaultValue={initialComment} name="comment"
                                         placeholder="Write your comment..."
-                                        className="min-h-32 w-full rounded-2xl border-2 border-cyan-600 bg-cyan-50 p-4 outline-none focus:border-cyan-400"
+                                        className="min-h-32 w-full rounded-2xl border-2 border-cyan-600 p-4 outline-none focus:border-cyan-400"
                                     />
 
                                     <Button type="submit" className="mt-4 rounded-sm bg-cyan-500 px-6 py-3 text-white transition hover:bg-cyan-600">

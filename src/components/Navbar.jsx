@@ -8,6 +8,7 @@ import { authClient } from '@/lib/auth-client';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './ThemeToggle';
+import { FcIdea } from 'react-icons/fc';
 
 const Navbar = () => {
 
@@ -37,13 +38,7 @@ const Navbar = () => {
 
                     <Link href={'/'}>
 
-                        <Image
-                            className='rounded-md'
-                            src={'/assets/logo1.png'}
-                            alt='logo'
-                            width={100}
-                            height={100}
-                        />
+                        <h1 className='text-2xl flex items-center font-bold text-cyan-800'><FcIdea/>IdeaVault</h1>
 
                     </Link>
 

@@ -5,6 +5,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const banners = [
 
@@ -58,7 +59,9 @@ const Banner = () => {
 
                 </p>
 
-                <button className="bg-cyan-600 px-4 py-2 rounded-md sm:px-5 sm:py-3">Explore Now</button>
+                <Link href={'/ideas'}>
+                <button className="bg-cyan-600 px-4 py-2 cursor-pointer hover:bg-cyan-800 rounded-md sm:px-5 sm:py-3">Explore Now</button>
+                </Link>
 
               </div>
 

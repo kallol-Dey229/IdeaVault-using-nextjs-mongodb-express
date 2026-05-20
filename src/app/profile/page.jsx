@@ -11,9 +11,9 @@ const MyProfilePage = () => {
 
     return (
 
-        <div className="min-h-screen bg-cyan-50 py-10 px-4">
+        <div className="min-h-screen  py-10 px-4">
 
-            <div className="mx-auto max-w-4xl rounded-md bg-cyan-50 shadow-lg overflow-hidden">
+            <div className="mx-auto max-w-4xl rounded-md  shadow-lg overflow-hidden">
 
                 {/* Header */}
 
@@ -59,7 +59,7 @@ const MyProfilePage = () => {
 
                     <div className="mt-10 grid md:grid-cols-2 gap-6">
 
-                        <div className="rounded-2xl bg-cyan-50 p-6">
+                        <div className="rounded-2xl p-6">
 
                             <h3 className="text-lg font-semibold text-cyan-700 mb-4">
                                 Profile Information
@@ -87,7 +87,7 @@ const MyProfilePage = () => {
 
 
 
-                        <div className="rounded-2xl bg-cyan-50 p-6">
+                        <div className="rounded-2xl p-6">
 
                             <h3 className="text-lg font-semibold text-cyan-700 mb-4">
                                 Account Status

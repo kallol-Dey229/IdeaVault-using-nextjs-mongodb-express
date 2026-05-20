@@ -37,11 +37,11 @@ export function EditModal({ idea }) {
     return (
         <Modal>
             
-                <Button size="xs" variant="outline" className={'hover:bg-cyan-200 rounded-md w-full'}><FaRegEdit size={'xs'} />Edit</Button>
+                <Button size="xs" variant="outline" className={'hover:bg-cyan-200 rounded-md w-full text-black'}><FaRegEdit size={'xs'} />Edit</Button>
             
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
-                    <Modal.Dialog className="sm:min-w-xl bg-cyan-50 shadow-lg">
+                    <Modal.Dialog className="sm:min-w-xl shadow-lg">
                         <Modal.CloseTrigger />
                         <Modal.Header className="text-center">
                             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
@@ -54,32 +54,32 @@ export function EditModal({ idea }) {
                         </Modal.Header>
                         <Modal.Body className="">
                             <Surface variant="default">
-                                <Form onSubmit={handleSubmit} className="flex mx-auto flex-col gap-4 mt-10 bg-cyan-50 shadow-xl p-5 rounded-md">
+                                <Form onSubmit={handleSubmit} className="flex mx-auto flex-col gap-4 mt-10 shadow-xl p-5 rounded-md">
 
                                     <div className="flex flex-col gap-1">
                                         <Label>Idea Title</Label>
-                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={title} name="title" placeholder="Write your title" type="text" required />
+                                        <Input className={'border-cyan-100 border-2'} defaultValue={title} name="title" placeholder="Write your title" type="text" required />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <Label>Short Description</Label>
-                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={shortDescription} name="shortDescription" placeholder="Write a short description" type="text" required />
+                                        <Input className={'border-cyan-100 border-2'} defaultValue={shortDescription} name="shortDescription" placeholder="Write a short description" type="text" required />
                                     </div>
 
                                     <div className="flex flex-col gap-1">
                                         <Label>Detailed Description</Label>
-                                        <TextArea className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={detailedDescription} name="detailedDescription" required></TextArea>
+                                        <TextArea className={'border-cyan-100 border-2'} defaultValue={detailedDescription} name="detailedDescription" required></TextArea>
                                     </div>
 
                                     <div className="flex flex-col gap-1">
 
                                         <Select defaultValue={category} name="category" className="w-[256px]" placeholder="Select Category" required>
                                             <Label>Category</Label>
-                                            <Select.Trigger className={'bg-cyan-50 border-cyan-100 border-2'}>
+                                            <Select.Trigger className={' border-cyan-100 border-2'}>
                                                 <Select.Value />
                                                 <Select.Indicator />
                                             </Select.Trigger>
                                             <Select.Popover>
-                                                <ListBox className={'bg-cyan-50 border-cyan-100 border-2'}>
+                                                <ListBox className={' border-cyan-100 border-2'}>
                                                     <ListBox.Item className="hover:bg-cyan-600 hover:text-white" id="tech" textValue="Tech">
                                                         Tech
                                                         <ListBox.ItemIndicator />
@@ -107,35 +107,35 @@ export function EditModal({ idea }) {
 
                                     <div className="flex flex-col gap-1">
                                         <Label>tags(optional)</Label>
-                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={tags} name="tags" placeholder="tags" type="text" />
+                                        <Input className={'border-cyan-100 border-2'} defaultValue={tags} name="tags" placeholder="tags" type="text" />
                                     </div>
 
                                     <div className="flex flex-col gap-1">
                                         <Label>ImageURL</Label>
-                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={imageURL} name="imageURL" placeholder="Image URL" type="text" required />
+                                        <Input className={'border-cyan-100 border-2'} defaultValue={imageURL} name="imageURL" placeholder="Image URL" type="text" required />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <Label>Estimated Budget (optional)</Label>
-                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={estimatedBudget} name="estimatedBudget" placeholder="Budget" type="text" />
+                                        <Input className={'border-cyan-100 border-2'} defaultValue={estimatedBudget} name="estimatedBudget" placeholder="Budget" type="text" />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <Label>Target Audience</Label>
-                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={targetAudience} name="targetAudience" placeholder="Audience" type="text" required />
+                                        <Input className={'border-cyan-100 border-2'} defaultValue={targetAudience} name="targetAudience" placeholder="Audience" type="text" required />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <Label>Problem Statement</Label>
-                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={problemStatement} name="problemStatement" placeholder="Write Problem Statement" type="text" required />
+                                        <Input className={'border-cyan-100 border-2'} defaultValue={problemStatement} name="problemStatement" placeholder="Write Problem Statement" type="text" required />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <Label>Proposed Solution</Label>
-                                        <Input className={'bg-cyan-50 border-cyan-100 border-2'} defaultValue={proposedSolution} name="proposedSolution" placeholder="Write Proposed Solution" type="text" required />
+                                        <Input className={'border-cyan-100 border-2'} defaultValue={proposedSolution} name="proposedSolution" placeholder="Write Proposed Solution" type="text" required />
                                     </div>
 
                                     <Modal.Footer>
-                                        <Button slot="close" variant="secondary">
+                                        <Button slot="close" variant="outline" className={'rounded-sm bg-transparent text-cyan-800 border border-cyan-800 flex items-center justify-center gap-2'}>
                                             Cancel
                                         </Button>
-                                        <Button slot="close" type="submit">
+                                        <Button slot="close" className={'bg-cyan-800 rounded-sm'} type="submit">
                                             Update Idea
                                         </Button>
                                     </Modal.Footer>
