@@ -1,17 +1,24 @@
 'use client'
 
+import { Button } from "@heroui/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { FaRegEdit } from "react-icons/fa";
+import { EditCommentModal } from "./EditCommentModal";
+import { authClient } from "@/lib/auth-client";
+import { DeleteCommentAlert } from "./DeleteCommentAlert";
 
 const ShowComment = ({ ideaId }) => {
+
+    const { data: session } = authClient.useSession();
+
+    const user = session?.user;
 
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
 
-        fetch(
-            `${process.env.NEXT_PUBLIC_SERVER_URL}/comment/${ideaId}`
-        )
+        fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/comment/${ideaId}`)
             .then(res => res.json())
             .then(data => setComments(data));
 
@@ -36,12 +43,10 @@ const ShowComment = ({ ideaId }) => {
 
                     return (
 
-                        <div
-                            key={comment._id}
-                            className="rounded-2xl bg-cyan-50 shadow-md p-4"
-                        >
+                        <div key={comment._id} className="rounded-2xl bg-cyan-50 shadow-md p-4">
 
-                            <div className="flex items-center gap-3">
+                            <div className="flex justify-between">
+                                <div className="flex items-center gap-3">
 
                                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500 text-white font-semibold overflow-hidden">
 
@@ -75,6 +80,13 @@ const ShowComment = ({ ideaId }) => {
 
                                 </div>
 
+                            </div>
+                            {user?.id === comment.userId && (
+                                <div className="flex gap-2">
+                                    <EditCommentModal comment={comment} />
+                                    <DeleteCommentAlert comment={comment} />
+                                </div>
+                            )}
                             </div>
 
                             <p className="mt-3 text-gray-600 ml-13">

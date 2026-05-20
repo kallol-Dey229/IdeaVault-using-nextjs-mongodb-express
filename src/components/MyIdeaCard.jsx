@@ -47,7 +47,7 @@ const MyIdeaCard = ({ idea }) => {
                     <div className="flex flex-col gap-1">
                 <EditModal idea={idea} />
                 <DeleteAlert idea={idea} />
-                </div>
+                </div> 
                 </div>
 
                 <div className="rounded-2xl bg-cyan-50 p-3">
